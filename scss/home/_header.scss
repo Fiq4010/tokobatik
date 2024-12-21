@@ -1,0 +1,74 @@
+header {
+    background-image: url(../images/pics/gambar1.jpg);
+    background-attachment: fixed;
+    @include bg(top);
+
+    // HERO
+    .hero {
+        font-family: helveticaNeueLt;
+        color: $white;
+        padding-top: 70px;
+    
+        .heading {
+            padding: 40px 0 80px;
+            width: 300px;
+        }
+    
+        .bottom {
+            width: 350px;
+    
+            p {
+                padding-top: 15px;
+            }
+    
+            .explore {
+                padding: 15px 0 50px;
+    
+                .btn-explore {
+                    font-family: helveticaNeueLt;
+                    width: 150px;
+                    height: 40px;
+                    background-color: transparent;
+                    border: 2px solid $white;
+                    text-transform: uppercase;
+                    color: $white;
+                    cursor: pointer;
+    
+                    &:hover {
+                        color: $black;
+                        background-color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $laptopS) {
+    header {
+      
+        // HERO
+        .hero {
+
+            .heading {
+                padding: 80px 0;
+                width: 800px;
+            }
+
+            .bottom {
+                padding-top: 80px;
+                width: 450px;
+        
+                .explore {
+                    padding: 15px 0 80px;
+        
+                    .btn-explore {
+                        font-size: 24px;
+                        width: 176px;
+                        height: 57px;
+                    }
+                }
+            }
+        }
+    }
+}

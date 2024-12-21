@@ -1,0 +1,223 @@
+.cart {
+    font-family: helveticaNeueLt;
+    color: $black;
+    padding: 70px 0 100px;
+
+    .bag {
+        position: relative;
+
+        .header {
+            display: none;
+        }
+
+        h2 {
+            padding: 30px 0;
+        }
+
+        .item {
+            padding-bottom: 30px;
+
+            ul {
+                @include flex(center);
+                list-style-type: none;
+                position: relative;
+                height: 150px;
+
+                li {
+                    font-size: 14px;
+                }
+
+                img {
+                    width: 150px;
+                    height: 100%;
+                }
+
+                .details {
+                    height: 100%;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 5px 0 0 20px;
+
+                    .productName_price {
+                        @include flex(space-between);
+
+                        .productName {
+                            text-transform: uppercase;
+                        }
+                    }
+
+                    .size {
+                        padding: 5px 0 40px;
+                    }
+
+                    .quantity {
+                        @include flex(space-between);
+            
+                        .count {
+                            @include flex(flex-start);
+                            padding-left: 20px;
+                            flex: 1;
+            
+                            .btn-quantity {
+                                width: 10px;
+                                height: 10px;
+                                cursor: pointer;
+                            }
+            
+                            li {
+                                padding: 0 5px;
+                            }
+                        }
+                    }
+
+                    .remove {
+                        position: absolute;
+                        bottom: 5px;
+                        font-family: helveticaNeueLt;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px solid #ACACAC;
+                        font-size: 14px;
+                        color: #ACACAC;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .line {
+            display: block;
+            margin: 10px 0;
+            background-color: $black;
+            height: 4px;
+        }
+
+        .receipt {
+            position: absolute;
+            right: 0;
+            width: 80%;
+            
+            p {
+                font-size: 14px;
+            }
+
+            .title {
+                flex: 1;
+                text-transform: uppercase
+            }
+
+            .subtotal, .shipping {
+                @include flex(space-between);
+                padding-bottom: 10px;
+            }
+            
+        }
+
+        .checkout {
+            margin: 100px 0 0;
+
+            .btn-checkout {
+                @include btn(100%, 60px);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $laptopS) {
+    .cart {
+        .bag {
+
+            .header {
+                display: block;
+                
+                ul {
+                    list-style-type: none;
+                    @include flex(space-between);
+                    border-bottom: 1px solid $black;
+                    margin-bottom: 30px;
+
+                    li:first-child {
+                        flex: 1;
+                    }
+
+                    li {
+                        font-size: $font-p;
+                        padding-right: 180px;
+                    }
+
+                    li:last-of-type {
+                        padding-right: 150px;
+                    }
+                }
+            }
+
+            .item {
+                ul {
+                    .details {
+                        @include flex(space-between);
+                        flex-direction: row;
+
+                        .size {
+                            padding: 0 200px 0 0;
+                        }
+
+                        .productName_price {
+                            flex: 1;
+
+                            .productPrice {
+                                position: absolute;
+                                right: 260px;
+                            }
+                        }
+
+                        .quantity {
+                            padding-right: 335px;
+                        }
+
+                        li {
+                            font-size: $font-p;
+
+                            .remove {
+                                font-size: $font-p;
+                                position: static;
+                                margin-right: 60px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .receipt {
+                padding-top: 30px;
+                width: 40%;
+
+                p {
+                    font-size: $font-p;
+                }
+    
+                .title {
+                    flex: 1;
+                    text-transform: uppercase
+                }
+    
+                .subtotal, .shipping {
+                    @include flex(space-between);
+                    padding-bottom: 10px;
+                }
+            }
+
+            .checkout {
+                position: absolute;
+                margin-top: 150px;
+                right: 0;
+                width: 40%;
+
+                .btn-checkout {
+                    @include btn(100%, 60px);
+                }
+            }
+        }
+    }
+
+}

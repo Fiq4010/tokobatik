@@ -1,0 +1,168 @@
+.shirt {
+    img {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+.product {
+    font-family: helveticaNeueLt;
+    color: $black;
+    padding: 70px 0 100px;
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+
+        .info {
+            padding-top: 30px;
+
+            .price {
+                padding: 10px 0 30px;
+            }
+        }
+
+        .description {
+
+            h3 {
+                text-transform: none;
+            }
+
+            p {
+                padding: 10px 0 30px;
+            }
+        }
+
+        .size {
+            @include flex(space-between);
+
+            p {
+                padding-right: 50px;
+            }
+
+            span {
+                cursor: pointer;
+            }
+
+            span:last-child {
+                padding-right: 50px;
+            }
+        }
+
+        .quantity {
+            @include flex(space-between);
+
+            .count {
+                @include flex(center);
+                flex: 1;
+
+                .btn-quantity {
+                    width: 10px;
+                    height: 10px;
+                    cursor: pointer;
+                }
+
+                span {
+                    padding: 0 15px;
+                }
+            }
+        }
+
+        .line {
+            display: block;
+            margin: 10px 0;
+            background-color: $black;
+            height: 4px;
+        }
+
+        .bag {
+            margin-top: 30px;
+
+            .btn-bag {
+                @include btn(100%, 60px)
+            }
+        }
+    }
+}
+
+.recommend {
+    h2.line {
+        @include flex(start); 
+        text-transform: none;
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: $black;
+            height: 1px;
+            margin-left: 340px;
+            width: 100%;
+            border-radius: 0.25rem;
+        }
+    }
+
+    .shirts {
+        .shirt {
+            cursor: pointer;
+            margin: 30px 0;
+
+            img {
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $laptopS) { 
+    .product {
+        padding-bottom: 120px;
+
+        .hero {
+            padding-top: 50px;
+            flex-direction: row;
+            align-items: center;
+            height: 700px;
+
+            .shirt {
+                img {
+                    width: 700px;
+                    height: 100%;
+                }
+            }
+
+            .right { 
+                flex: 1;
+                flex-direction: column;
+                padding: 0 50px;
+            }
+        }
+    }
+
+    .recommend {
+
+        h2.line {
+            &::after {
+                margin-left: 700px;
+            }
+        }
+
+        .shirts {
+            @include flex(space-between);
+
+            .shirt {
+                margin: 50px 0;
+    
+                img {
+                    padding-bottom: 10px;
+                    width: 400px;
+                    height: 400px;
+                }
+
+                h2 {
+                    font-size: 28px !important;
+                }
+            }
+        }
+    }
+
+}

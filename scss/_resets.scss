@@ -1,0 +1,59 @@
+@import './variables';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: helveticaNeueLt;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+h2, h3 {
+    font-size: 27px;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: $font-p;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 400px;
+    @media only screen and (min-width: $laptopS) {
+        max-width: 1000px;
+        h1 {
+            font-size: 66px !important;
+        }
+        
+        h2 {
+            font-size: 47px !important;
+        }
+    }
+    @media only screen and (min-width: $laptopL) {
+        max-width: 1380px;
+    }
+    margin: 0 auto;
+}
+
+@keyframes readHover {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(30px);
+    }
+}

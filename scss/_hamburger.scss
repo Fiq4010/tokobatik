@@ -1,0 +1,64 @@
+@media only screen and (max-width: $laptopS) {
+
+    .navbar {
+
+        .overlay {
+            position: fixed;
+            width: 100vw;
+            height: 0%;
+            top: 70px;
+            left: 0;
+            background-color: $white;
+            overflow: hidden;
+            z-index: 101;
+            transition: 0.5s;
+            flex-basis: 0;
+    
+            .menu {
+                position: relative;
+                display: flex;
+                flex-flow: column;
+                list-style-type: none;
+                height: 100%;
+    
+                .nav-item {
+                    margin: 15px 0;
+
+                    &:nth-child(1) {
+                        margin: 35px 0 15px;
+                    }
+                }
+    
+                .nav-link {
+                    font-size: 30px;
+                    color: $black;
+                    position: relative;
+
+                    @include hover($black !important);
+                }
+            }
+
+            .sign-in {
+                @include flex(center);
+                margin-top: 60px;
+
+                .btn-signIn {
+                    @include btn(100%, 60px);
+                }
+            }
+        }
+
+        .hamburger {
+            transition: 0.25s;
+
+            &.active {
+                background-image: url(../images/icons/cancel.png)
+            }
+        } 
+
+        .overlay.active {
+            height: 100%;
+        }
+    }
+
+}

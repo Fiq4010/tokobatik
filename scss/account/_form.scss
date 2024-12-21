@@ -1,0 +1,100 @@
+.signUp, .logIn {
+    height: 100vh;
+    background-color: $white;
+    font-family: helveticaNeueLt;
+    color: $black;
+    padding-top: 70px;
+
+    .title {
+        padding-top: 50px;
+        text-transform: none;
+        text-align: center;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .form {
+        @include flex(center);
+        flex-direction: column;
+        padding-top: 50px;
+    
+        input {
+            font-family: helveticaNeueLt;
+            margin: 5px 0 20px;
+            padding: 5px;
+            width: 350px;
+            height: 40px;
+        }
+    
+        .btns {
+            .btn-signUp, .btn-logIn {
+                @include btn(350px, 50px);
+                margin-top: 30px;
+                color: $white;
+            }
+
+            .btn-signUp:hover, .btn-logIn:hover {
+                color: $black;
+            }
+    
+            p {
+                padding-top: 20px;
+                @include flex(center);
+    
+                a {
+                    text-decoration: none;
+                    @include flex(center);
+                    padding-left: 5px;
+                    color: $black;
+                    
+                    &::after {
+                        content: url(../images/icons/icons8_right_32px.png);
+                        width: 32px;
+                        height: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: $laptopS) { 
+    .signUp, .logIn {
+        
+        .title {
+            text-align: left;
+        }
+
+        .line {
+            display: block;
+            margin: 30px 0;
+            background-color: $black;
+            height: 4px;
+        }
+
+        .form {
+            .top, .bottom {
+                @include flex(center);
+                gap: 20px;
+            }
+    
+            .btns {
+                @include flex(space-between);
+                width: 720px;
+                margin-top: 10px;
+    
+                .btn-signUp, .btn-logIn {
+                    margin-top: 0;
+                    width: 200px;
+                }
+    
+                p {
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

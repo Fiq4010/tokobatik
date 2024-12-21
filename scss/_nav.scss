@@ -1,0 +1,152 @@
+// NAV
+nav {
+    background-color: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: 0.6s;
+    z-index: 100;
+
+    .navbar {
+        height: 70px;
+        @include flex(space-between);
+        position: relative;
+    
+        &-left {
+            .navbar-logo {
+                cursor: pointer;
+        
+                img {
+                    width: 36px;
+                    height: 36px;
+                }
+            }
+        
+            .overlay {
+
+                .menu {
+                    list-style: none;
+
+                    .nav-item {
+                        position: relative;
+                        cursor: pointer;
+                    }
+
+                    .nav-link {
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        font-family: helveticaNeueLt;
+                    }
+                }
+            }
+        }
+    
+        &-right {
+            @include flex(center);
+    
+            .navbar-button {
+                cursor: pointer;
+                margin: 10px;
+                width: 28px;
+                height: 28px;
+                @include bg(center);
+            }
+            
+            .icon1 {
+                background-image: url(../images/icons/bag_black.png);
+            }
+
+            .icon2 {
+                display: none;
+            }
+
+            .icon1, .icon2 {
+                position: relative;
+
+                a {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .hamburger {
+                background-image: url(../images/icons/menu_black.png);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: $laptopS) {
+        // NAV
+        nav {
+            background-color: transparent;
+
+            &.sticky {
+                background-color: $white;
+    
+                .menu, .nav-item, .nav-link {
+                    color: $black !important;
+                }
+
+                .nav-item {
+                    @include hover($black !important);
+                }
+
+                .icon1 {
+                    background-image: url(../images/icons/bag_black.png) !important;
+                }
+
+                .icon2 {
+                    background-image: url(../images/icons/user_black.png) !important;
+                }
+            }
+
+            .navbar {
+
+                &-left {
+                    @include flex(center);
+                
+                    .overlay {
+                        display: block;
+    
+                        .menu {
+                            @include flex(center);
+
+                            .nav-item {
+                                margin-left: 40px;
+                                @include hover($white);
+                            }
+
+                            .nav-link {
+                                color: $white;
+                            }
+                        }
+
+                        .sign-in {
+                            display: none;
+                        }
+                    }
+                }
+
+                &-right {
+                    flex-direction: row-reverse;
+
+                    .icon1 {
+                        background-image: url(../images/icons/bag_white.png);
+                    }
+
+                    .icon2 {
+                        display: block;
+                        background-image: url(../images/icons/user_white.png);
+                    }
+    
+                    .hamburger {
+                        display: none;
+                    }
+                }
+            }
+        }
+}

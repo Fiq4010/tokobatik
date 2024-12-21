@@ -1,0 +1,78 @@
+$black: #000000;
+$grey: #F5F5F5;
+$white: #FFFFFF;
+$mobile: 425px;
+$laptopS: 1024px;
+$laptopL: 1440px;
+$font-p: 18px;
+
+@font-face {
+    font-family: 'helveticaNeue';
+    src: url(../fonts/HelveticaNeueLight.ttf);
+}
+
+@font-face {
+    font-family: 'helvetica93';
+    src: url(../fonts/Helvetica-Neue-LT-Std-93-Black-Extended_22550.ttf);
+}
+
+@font-face {
+    font-family: 'helveticaNeueLt';
+    src: url(../fonts/Helvetica-Neue-LT-Std-53-Extended_22525.ttf);
+}
+
+@mixin flex($j-content) {
+    display: flex;
+    align-items: center;
+    justify-content: $j-content;
+}
+
+@mixin bg($position) {
+    background-position: $position;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin hover($bg-color) {
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border-radius: 0.25rem;
+        background-color: $bg-color;
+        height: 1px;
+        transition: .25s linear;
+        transform: scaleX(0);
+    }
+
+    &:hover::before,
+    &:focus::before {
+        transform: scaleX(1);
+    }
+}
+
+@mixin btn($width, $height) {
+    display: block;
+    font-family: helveticaNeueLt;
+    width: $width;
+    height: $height;
+    border-radius: 10px;
+    background-color: $black;
+    text-transform: uppercase;
+    font-size: $font-p;
+    cursor: pointer;
+
+    a {
+        text-decoration: none;
+        color: $white;
+    }
+
+    &:hover {
+        background-color: $white;
+
+        a {
+            color: $black;
+        }
+    }
+}

@@ -1,0 +1,166 @@
+footer {
+    background-color: $white;
+    color: $black;
+    padding-top: 200px;
+
+    .newsletter {
+        padding-bottom: 280px;
+        border-bottom: 1px solid $black;
+
+        h3 {
+            padding-bottom: 20px;
+        }
+        p {
+            padding-bottom: 20px;
+        }
+
+        .email {
+            border-bottom: 1px solid $black;
+        
+            input {
+                border: none;
+                outline: none;
+                padding: 5px;
+                width: 100%;
+                font-family: helveticaNeueLt;
+            }
+        
+            a {
+                display: none;
+            }
+        }
+    }
+
+    .nav, .socials {
+        display: none;
+    }
+
+    .yd-contact {
+        padding: 30px 0;
+        @include flex(start);
+
+        .footer-logo {
+            cursor: pointer;
+
+            img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        .contacts {
+            margin-left: 20px;
+            width: 200px;
+            color: $black;
+
+            p {
+                &:nth-of-type(2) {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    .all-rights {
+        margin-bottom: 50px;
+        font-size: $font-p;
+        width: 180px;
+    }
+}
+
+@media only screen and (min-width: $laptopS) {
+
+    footer {
+
+        .footer {
+            display: flex;
+            margin-top: 100px;
+
+            .newsletter {
+                width: 400px;
+                padding: 0 0 280px 50px;
+                border-bottom: none;
+    
+                h3 {
+                    padding-bottom: 15px;
+                }
+    
+                .email {
+                    display: flex;
+                    align-items: center;
+                
+                    input {
+                        width: 300px;
+                    }
+                
+                    a {
+                        display: block;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        color: $black;
+                    }
+                }
+            }
+    
+            .nav, .socials {
+                margin-left: 300px;
+                display: block;
+
+                .menu {
+                    @include flex(center);
+                    flex-direction: column;
+                    list-style: none;
+
+                    .nav-item, .social-item {
+                        margin-bottom: 20px;
+                        position: relative;
+                        cursor: pointer;
+
+                        @include hover($black);
+                    }
+
+                    .nav-link, .social-link {
+                        color: $black;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        font-family: helveticaNeueLt;
+                    }
+                }
+            }
+
+            .socials {
+                margin-left: 50px;
+            }
+
+            .yd-contact {
+                padding: 0;
+                align-items: flex-end;
+                flex: 1;
+                flex-direction: column;
+    
+                .footer-logo {
+                    cursor: pointer;
+                    padding-bottom: 15px;
+    
+                    img {
+                        width: 150px;
+                        height: 150px;
+                    }
+                }
+    
+                .contacts {
+                    text-align: right;
+                    width: 250px;
+                }
+            }
+        }
+
+        .all-rights {
+            width: 100%;
+            bottom: 0;
+            border-top: 2px solid $black;
+            padding: 5px 0;
+        }
+    }
+
+}
